@@ -26,9 +26,7 @@ export default function DatePickerBasicDemo() @{
         }
       >
         @if (date) {
-          {
-            format(date, "PPP") as string
-          }
+          <>{format(date, "PPP") as string}</>
         } @else {
           <span>Pick a date</span>
         }

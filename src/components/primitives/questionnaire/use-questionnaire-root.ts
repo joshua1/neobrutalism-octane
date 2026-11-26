@@ -59,9 +59,9 @@ function useQuestionnaireRoot({
   const [registrations, setRegistrations] = Octane.useState<ItemRegistration[]>(
     [],
   )
-  const [uncontrolledItem, setUncontrolledItem] = Octane.useState<string | null>(
-    () => getInitialItemName(collection, defaultItem),
-  )
+  const [uncontrolledItem, setUncontrolledItem] = Octane.useState<
+    string | null
+  >(() => getInitialItemName(collection, defaultItem))
   const [rootElement, setRootElement] = Octane.useState<HTMLFormElement | null>(
     null,
   )

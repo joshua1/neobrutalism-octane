@@ -156,9 +156,7 @@ function ToastClose({
     {...props}
   >
     @if (children != null) {
-      {
-        children
-      }
+      <>{children}</>
     } @else {
       <XIcon aria-hidden="true" />
     }

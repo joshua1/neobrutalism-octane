@@ -113,9 +113,7 @@ function MessageScrollerButton({
     {...props}
   >
     @if (children != null) {
-      {
-        children
-      }
+      <>{children}</>
     } @else {
       <>
         <ArrowDownIcon />

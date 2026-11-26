@@ -38,9 +38,7 @@ export default function DatePickerRangePickerDemo() @{
               {format(date.to, "LLL dd, y") as string}
             </>
           } @else {
-            {
-              format(date.from, "LLL dd, y") as string
-            }
+            <>{format(date.from, "LLL dd, y") as string}</>
           }
         } @else {
           <span>Pick a date</span>

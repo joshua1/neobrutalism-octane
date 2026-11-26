@@ -58,11 +58,15 @@ function useQuestionnaireItem({
     registerItem,
     shortcuts,
   } = useQuestionnaireContext("Questionnaire.Item")
-  const [element, setElement] = Octane.useState<HTMLFieldSetElement | null>(null)
+  const [element, setElement] = Octane.useState<HTMLFieldSetElement | null>(
+    null,
+  )
   const [answerControlRegistrations, setAnswerControlRegistrations] =
     Octane.useState<AnswerControlRegistration[]>([])
   const [validationAttempted, setValidationAttempted] = Octane.useState(false)
-  const [selectedAnswerIds, setSelectedAnswerIds] = Octane.useState<string[]>([])
+  const [selectedAnswerIds, setSelectedAnswerIds] = Octane.useState<string[]>(
+    [],
+  )
   const [skipped, setSkipped] = Octane.useState(false)
   const [resetVersion, setResetVersion] = Octane.useState(0)
   const [descriptionIds, setDescriptionIds] = Octane.useState<string[]>([])

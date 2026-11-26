@@ -103,8 +103,9 @@ export default function FormRadioGroupDemo() @{
                       onValueChange={field.onInput}
                       class="gap-3"
                     >
-                      @for (const plan of plans; key plan.id) {
+                      {plans.map((plan) => (
                         <FormItem
+                          key={plan.id}
                           class="flex items-start justify-between gap-4 rounded-base border-2 border-border bg-secondary-background p-4"
                         >
                           <div class="grid gap-1.5">
@@ -117,7 +118,7 @@ export default function FormRadioGroupDemo() @{
                             <RadioGroupItem value={plan.id} />
                           </FormControl>
                         </FormItem>
-                      }
+                      ))}
                     </RadioGroup>
                   </FormControl>
                   <FormMessage />

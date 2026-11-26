@@ -10,8 +10,6 @@ export default function HoverCardDemo() @{
     <HoverCardTrigger render={<Button variant="noShadow" />}>
       Hover
     </HoverCardTrigger>
-    <HoverCardContent>
-      The compiler-first UI framework.
-    </HoverCardContent>
+    <HoverCardContent>The compiler-first UI framework.</HoverCardContent>
   </HoverCard>
 }

@@ -121,13 +121,11 @@ export default function FormSelectDemo() @{
                     <SelectContent alignItemWithTrigger>
                       <SelectItem value="auto">Auto</SelectItem>
                       <SelectSeparator />
-                      @for (const language of spokenLanguages; key language.value) {
-                        <SelectItem
-                          value={language.value}
-                        >
+                      {spokenLanguages.map((language) => (
+                        <SelectItem key={language.value} value={language.value}>
                           {language.label as string}
                         </SelectItem>
-                      }
+                      ))}
                     </SelectContent>
                   </Select>
                 </FormItem>
