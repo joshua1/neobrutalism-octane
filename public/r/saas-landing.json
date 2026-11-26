@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-landing",
+  "title": "SaaS Landing Page",
+  "description": "A complete neobrutalism SaaS landing page: navbar, hero, logo marquee, bento features, product tabs, how it works, stats, pricing, testimonials, FAQ, CTA and footer.",
+  "registryDependencies": [
+    "https://neobrutalism-octane.vercel.app/r/saas-cta.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-faq.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-features.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-footer.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-hero.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-how-it-works.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-logos.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-navbar.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-pricing.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-product-tabs.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-stats.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-testimonials.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/templates/saas/saas-landing.tsrx",
+      "content": "import CTA from \"./cta.tsrx\"\nimport FAQ from \"./faq.tsrx\"\nimport Features from \"./features.tsrx\"\nimport Footer from \"./footer.tsrx\"\nimport Hero from \"./hero.tsrx\"\nimport HowItWorks from \"./how-it-works.tsrx\"\nimport Logos from \"./logos.tsrx\"\nimport Navbar from \"./navbar.tsrx\"\nimport Pricing from \"./pricing.tsrx\"\nimport ProductTabs from \"./product-tabs.tsrx\"\nimport Stats from \"./stats.tsrx\"\nimport Testimonials from \"./testimonials.tsrx\"\n\n// Upstream's page metadata, for the route's head().\nexport const metadata = {\n  title: \"Planly - Plan less. Ship more.\",\n  description:\n    \"The fast, focused project tracker for teams that ship. Issues, roadmaps and AI triage in one workspace.\",\n}\n\nexport default function SaasLanding() @{\n  <div class=\"min-h-screen bg-background font-base text-foreground\">\n    <Navbar />\n    <main>\n      <Hero />\n      <Logos />\n      <Features />\n      <ProductTabs />\n      <HowItWorks />\n      <Stats />\n      <Pricing />\n      <Testimonials />\n      <FAQ />\n      <CTA />\n    </main>\n    <Footer />\n  </div>\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/saas-landing.tsrx"
+    }
+  ],
+  "type": "registry:block"
+}

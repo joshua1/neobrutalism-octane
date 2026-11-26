@@ -31,6 +31,10 @@ const GETTING_STARTED_LINKS = [
     text: "Changelog",
   },
   {
+    href: "/templates",
+    text: "Templates",
+  },
+  {
     href: "/styling",
     text: "Styling",
   },

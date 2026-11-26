@@ -18,29 +18,23 @@ function Navbar({ starsCount }: { starsCount?: string | null }) @{
         <div class="items-center text-base font-base xl:gap-10 lg:flex gap-10 hidden">
           <Link to="/docs">Docs</Link>
 
-          <Link class="flex items-center gap-2" to="/docs/accordion">
-            Components
-            <Badge
-              variant="neutral"
-              class="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
-            >
-              New
-            </Badge>
-          </Link>
+          <Link to="/docs/accordion">Components</Link>
 
-          <Link class="flex items-center gap-2" to="/styling">
-            Styling
-            <Badge
-              variant="neutral"
-              class="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
-            >
-              New
-            </Badge>
-          </Link>
+          <Link to="/styling">Styling</Link>
 
           <Link to="/charts">Charts</Link>
 
           <Link to="/stars">Stars</Link>
+
+          <Link class="flex items-center gap-2" to="/templates">
+            Templates
+            <Badge
+              variant="neutral"
+              class="bg-chart-3 text-main-foreground px-1.5 py-0 text-[10px] font-heading uppercase"
+            >
+              New
+            </Badge>
+          </Link>
         </div>
       </div>
 

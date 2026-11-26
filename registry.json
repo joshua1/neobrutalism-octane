@@ -1600,6 +1600,407 @@
           "target": "components/stars/s40.tsrx"
         }
       ]
+    },
+    {
+      "name": "saas-shared",
+      "title": "SaaS - Shared decor and section heading",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/s14.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/decor-star.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/decor-star.tsrx"
+        },
+        {
+          "path": "src/components/templates/saas/section-heading.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/section-heading.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-navbar",
+      "title": "SaaS - Navbar",
+      "type": "registry:component",
+      "dependencies": [
+        "@octanejs/lucide"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/nbutton.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/navbar.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/navbar.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-email-capture",
+      "title": "SaaS - Email capture",
+      "type": "registry:component",
+      "dependencies": [
+        "@octanejs/lucide"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/nbutton.json",
+        "https://neobrutalism-octane.vercel.app/r/ninput.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/email-capture.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/email-capture.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-hero",
+      "title": "SaaS - Hero",
+      "type": "registry:component",
+      "dependencies": [
+        "@octanejs/lucide"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/nbutton.json",
+        "https://neobrutalism-octane.vercel.app/r/s14.json",
+        "https://neobrutalism-octane.vercel.app/r/s26.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-shared.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/hero.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/hero.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-logos",
+      "title": "SaaS - Logos",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/s19.json",
+        "https://neobrutalism-octane.vercel.app/r/s22.json",
+        "https://neobrutalism-octane.vercel.app/r/s24.json",
+        "https://neobrutalism-octane.vercel.app/r/s25.json",
+        "https://neobrutalism-octane.vercel.app/r/s27.json",
+        "https://neobrutalism-octane.vercel.app/r/s28.json",
+        "https://neobrutalism-octane.vercel.app/r/s5.json",
+        "https://neobrutalism-octane.vercel.app/r/s6.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-shared.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/logos.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/logos.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-features",
+      "title": "SaaS - Features",
+      "type": "registry:component",
+      "dependencies": [
+        "@octanejs/lucide"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/avatar.json",
+        "https://neobrutalism-octane.vercel.app/r/kbd.json",
+        "https://neobrutalism-octane.vercel.app/r/s19.json",
+        "https://neobrutalism-octane.vercel.app/r/s25.json",
+        "https://neobrutalism-octane.vercel.app/r/s35.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-shared.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/features.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/features.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-product-tabs",
+      "title": "SaaS - Product tabs",
+      "type": "registry:component",
+      "dependencies": [
+        "@octanejs/lucide"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/s11.json",
+        "https://neobrutalism-octane.vercel.app/r/s24.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-shared.json",
+        "https://neobrutalism-octane.vercel.app/r/switch.json",
+        "https://neobrutalism-octane.vercel.app/r/tabs.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/product-tabs.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/product-tabs.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-how-it-works",
+      "title": "SaaS - How it works",
+      "type": "registry:component",
+      "dependencies": [
+        "@octanejs/lucide"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/s29.json",
+        "https://neobrutalism-octane.vercel.app/r/s4.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-shared.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/how-it-works.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/how-it-works.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-stats",
+      "title": "SaaS - Stats",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/templates/saas/stats.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/stats.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-pricing",
+      "title": "SaaS - Pricing",
+      "type": "registry:component",
+      "dependencies": [
+        "@octanejs/lucide"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/badge.json",
+        "https://neobrutalism-octane.vercel.app/r/nbutton.json",
+        "https://neobrutalism-octane.vercel.app/r/ncard.json",
+        "https://neobrutalism-octane.vercel.app/r/s15.json",
+        "https://neobrutalism-octane.vercel.app/r/s16.json",
+        "https://neobrutalism-octane.vercel.app/r/s6.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-shared.json",
+        "https://neobrutalism-octane.vercel.app/r/switch.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/pricing.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/pricing.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-testimonials",
+      "title": "SaaS - Testimonials",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/avatar.json",
+        "https://neobrutalism-octane.vercel.app/r/s22.json",
+        "https://neobrutalism-octane.vercel.app/r/s30.json",
+        "https://neobrutalism-octane.vercel.app/r/s4.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-shared.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/testimonials.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/testimonials.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-faq",
+      "title": "SaaS - FAQ",
+      "type": "registry:component",
+      "dependencies": [
+        "@octanejs/lucide"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/accordion.json",
+        "https://neobrutalism-octane.vercel.app/r/nbutton.json",
+        "https://neobrutalism-octane.vercel.app/r/s22.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-shared.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/faq.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/faq.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-cta",
+      "title": "SaaS - CTA",
+      "type": "registry:component",
+      "dependencies": [
+        "@octanejs/lucide"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/s15.json",
+        "https://neobrutalism-octane.vercel.app/r/s22.json",
+        "https://neobrutalism-octane.vercel.app/r/s26.json",
+        "https://neobrutalism-octane.vercel.app/r/s30.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-email-capture.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/cta.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/cta.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-footer",
+      "title": "SaaS - Footer",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/templates/saas/footer.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/footer.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "saas-landing",
+      "title": "SaaS Landing Page",
+      "type": "registry:block",
+      "description": "A complete neobrutalism SaaS landing page: navbar, hero, logo marquee, bento features, product tabs, how it works, stats, pricing, testimonials, FAQ, CTA and footer.",
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/saas-cta.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-faq.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-features.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-footer.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-hero.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-how-it-works.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-logos.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-navbar.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-pricing.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-product-tabs.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-stats.json",
+        "https://neobrutalism-octane.vercel.app/r/saas-testimonials.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/saas/saas-landing.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/saas/saas-landing.tsrx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "title": "Dashboard",
+      "type": "registry:block",
+      "description": "A neobrutalism store analytics dashboard with a sidebar and six pages of charts and tables, plus profile and billing.",
+      "dependencies": [
+        "@octanejs/lucide",
+        "@octanejs/recharts"
+      ],
+      "registryDependencies": [
+        "https://neobrutalism-octane.vercel.app/r/avatar.json",
+        "https://neobrutalism-octane.vercel.app/r/badge.json",
+        "https://neobrutalism-octane.vercel.app/r/chart.json",
+        "https://neobrutalism-octane.vercel.app/r/dropdown-menu.json",
+        "https://neobrutalism-octane.vercel.app/r/nbutton.json",
+        "https://neobrutalism-octane.vercel.app/r/ncard.json",
+        "https://neobrutalism-octane.vercel.app/r/ninput.json",
+        "https://neobrutalism-octane.vercel.app/r/nlabel.json",
+        "https://neobrutalism-octane.vercel.app/r/progress.json",
+        "https://neobrutalism-octane.vercel.app/r/select.json",
+        "https://neobrutalism-octane.vercel.app/r/sidebar.json",
+        "https://neobrutalism-octane.vercel.app/r/switch.json",
+        "https://neobrutalism-octane.vercel.app/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/templates/dashboard/dashboard.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/dashboard.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/app-sidebar.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/app-sidebar.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/billing.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/billing.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/charts.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/charts.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/customers.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/customers.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/data.ts",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/data.ts"
+        },
+        {
+          "path": "src/components/templates/dashboard/inventory.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/inventory.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/marketing.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/marketing.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/order-table.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/order-table.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/orders.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/orders.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/overview.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/overview.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/profile.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/profile.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/revenue.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/revenue.tsrx"
+        },
+        {
+          "path": "src/components/templates/dashboard/shared.tsrx",
+          "type": "registry:component",
+          "target": "components/templates/dashboard/shared.tsrx"
+        }
+      ]
     }
   ]
 }

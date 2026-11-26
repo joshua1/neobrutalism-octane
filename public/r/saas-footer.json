@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-footer",
+  "title": "SaaS - Footer",
+  "files": [
+    {
+      "path": "src/components/templates/saas/footer.tsrx",
+      "content": "const LINKS = {\n  Product: [\"Features\", \"Pricing\", \"Changelog\", \"Roadmap\", \"Integrations\"],\n  Company: [\"About\", \"Blog\", \"Careers\", \"Customers\"],\n  Resources: [\"Docs\", \"API reference\", \"Guides\", \"Status\"],\n  Legal: [\"Privacy\", \"Terms\", \"Security\", \"DPA\"],\n}\n\nexport default function Footer() @{\n  <footer class=\"bg-secondary-background px-5 py-16\">\n    <div class=\"mx-auto w-full max-w-6xl\">\n      <div class=\"grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-6\">\n        <div class=\"col-span-2 sm:col-span-4 lg:col-span-2\">\n          <a href=\"#\" class=\"flex items-center gap-3 font-heading text-xl\">\n            <span class=\"flex size-8 items-center justify-center rounded-base border-2 border-border bg-main text-main-foreground\">\n              P\n            </span>\n            Planly\n          </a>\n          <p class=\"mt-4 max-w-xs text-sm font-base\">\n            The fast, focused project tracker for teams that ship.\n          </p>\n        </div>\n\n        @for (const [category, links] of Object.entries(LINKS); key category) {\n          <div>\n            <p class=\"font-heading text-lg\">{category as string}</p>\n            <ul class=\"mt-3 space-y-1\">\n              @for (const link of links; key link) {\n                <li>\n                  <a\n                    href=\"#\"\n                    class=\"inline-block py-1.5 text-sm font-base decoration-2 underline-offset-4 hover:underline\"\n                  >\n                    {link as string}\n                  </a>\n                </li>\n              }\n            </ul>\n          </div>\n        }\n      </div>\n\n      <p class=\"mt-14 text-center text-sm font-base\">\n        © 2026 Planly Inc. All rights reserved.\n      </p>\n    </div>\n  </footer>\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/footer.tsrx"
+    }
+  ],
+  "type": "registry:component"
+}

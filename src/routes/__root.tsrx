@@ -6,6 +6,7 @@ import {
   Html,
   Outlet,
   Scripts,
+  useLocation,
 } from "@octanejs/tanstack-router"
 import type { OctaneNode } from "octane"
 
@@ -50,7 +51,10 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Neobrutalism components" },
       { property: "og:description", content: DESCRIPTION },
-      { property: "og:url", content: "https://neobrutalism-octane.vercel.app/" },
+      {
+        property: "og:url",
+        content: "https://neobrutalism-octane.vercel.app/",
+      },
       { property: "og:image", content: PREVIEW_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
       {
@@ -81,11 +85,18 @@ export const Route = createRootRoute({
   notFoundComponent: NotFound,
 })
 
+// Template previews (/templates/<name>) are full pages of their own, shown
+// without the site navbar; the templates list keeps it.
+const TEMPLATE_PAGE = /^\/templates\/[^/]+/
+
 function RootLayout() @{
   const { starsCount } = Route.useLoaderData()
+  const pathname = useLocation({ select: (location) => location.pathname })
 
   <>
-    <Navbar starsCount={starsCount} />
+    @if (!TEMPLATE_PAGE.test(pathname)) {
+      <Navbar starsCount={starsCount} />
+    }
     <Outlet />
     <SetStylingPref />
     <ScrollToTop />

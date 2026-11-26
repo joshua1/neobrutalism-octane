@@ -16,10 +16,12 @@ import { Route as ShowcaseRouteImport } from './routes/showcase'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StarsRouteImport } from './routes/stars'
 import { Route as StylingRouteImport } from './routes/styling'
-import { Route as TemplatesRouteImport } from './routes/templates'
 import { Route as ComponentsSplatRouteImport } from './routes/components/$'
 import { Route as DocsIndexRouteImport } from './routes/docs/index'
 import { Route as DocsSplatRouteImport } from './routes/docs/$'
+import { Route as TemplatesIndexRouteImport } from './routes/templates/index'
+import { Route as TemplatesDashboardRouteImport } from './routes/templates/dashboard'
+import { Route as TemplatesSaasRouteImport } from './routes/templates/saas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -56,11 +58,6 @@ const StylingRoute = StylingRouteImport.update({
   path: '/styling',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TemplatesRoute = TemplatesRouteImport.update({
-  id: '/templates',
-  path: '/templates',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ComponentsSplatRoute = ComponentsSplatRouteImport.update({
   id: '/components/$',
   path: '/components/$',
@@ -76,6 +73,21 @@ const DocsSplatRoute = DocsSplatRouteImport.update({
   path: '/$',
   getParentRoute: () => DocsRouteRoute,
 } as any)
+const TemplatesIndexRoute = TemplatesIndexRouteImport.update({
+  id: '/templates/',
+  path: '/templates/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TemplatesDashboardRoute = TemplatesDashboardRouteImport.update({
+  id: '/templates/dashboard',
+  path: '/templates/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TemplatesSaasRoute = TemplatesSaasRouteImport.update({
+  id: '/templates/saas',
+  path: '/templates/saas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -85,10 +97,12 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stars': typeof StarsRoute
   '/styling': typeof StylingRoute
-  '/templates': typeof TemplatesRoute
   '/components/$': typeof ComponentsSplatRoute
   '/docs/$': typeof DocsSplatRoute
+  '/templates/dashboard': typeof TemplatesDashboardRoute
+  '/templates/saas': typeof TemplatesSaasRoute
   '/docs/': typeof DocsIndexRoute
+  '/templates/': typeof TemplatesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -97,10 +111,12 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stars': typeof StarsRoute
   '/styling': typeof StylingRoute
-  '/templates': typeof TemplatesRoute
   '/components/$': typeof ComponentsSplatRoute
   '/docs/$': typeof DocsSplatRoute
+  '/templates/dashboard': typeof TemplatesDashboardRoute
+  '/templates/saas': typeof TemplatesSaasRoute
   '/docs': typeof DocsIndexRoute
+  '/templates': typeof TemplatesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -111,10 +127,12 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stars': typeof StarsRoute
   '/styling': typeof StylingRoute
-  '/templates': typeof TemplatesRoute
   '/components/$': typeof ComponentsSplatRoute
   '/docs/$': typeof DocsSplatRoute
+  '/templates/dashboard': typeof TemplatesDashboardRoute
+  '/templates/saas': typeof TemplatesSaasRoute
   '/docs/': typeof DocsIndexRoute
+  '/templates/': typeof TemplatesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -126,10 +144,12 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/stars'
     | '/styling'
-    | '/templates'
     | '/components/$'
     | '/docs/$'
+    | '/templates/dashboard'
+    | '/templates/saas'
     | '/docs/'
+    | '/templates/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -138,10 +158,12 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/stars'
     | '/styling'
-    | '/templates'
     | '/components/$'
     | '/docs/$'
+    | '/templates/dashboard'
+    | '/templates/saas'
     | '/docs'
+    | '/templates'
   id:
     | '__root__'
     | '/'
@@ -151,10 +173,12 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/stars'
     | '/styling'
-    | '/templates'
     | '/components/$'
     | '/docs/$'
+    | '/templates/dashboard'
+    | '/templates/saas'
     | '/docs/'
+    | '/templates/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -165,8 +189,10 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StarsRoute: typeof StarsRoute
   StylingRoute: typeof StylingRoute
-  TemplatesRoute: typeof TemplatesRoute
   ComponentsSplatRoute: typeof ComponentsSplatRoute
+  TemplatesDashboardRoute: typeof TemplatesDashboardRoute
+  TemplatesSaasRoute: typeof TemplatesSaasRoute
+  TemplatesIndexRoute: typeof TemplatesIndexRoute
 }
 
 declare module '@octanejs/tanstack-router' {
@@ -220,13 +246,6 @@ declare module '@octanejs/tanstack-router' {
       preLoaderRoute: typeof StylingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/templates': {
-      id: '/templates'
-      path: '/templates'
-      fullPath: '/templates'
-      preLoaderRoute: typeof TemplatesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/components/$': {
       id: '/components/$'
       path: '/components/$'
@@ -247,6 +266,27 @@ declare module '@octanejs/tanstack-router' {
       fullPath: '/docs/$'
       preLoaderRoute: typeof DocsSplatRouteImport
       parentRoute: typeof DocsRouteRoute
+    }
+    '/templates/': {
+      id: '/templates/'
+      path: '/templates'
+      fullPath: '/templates/'
+      preLoaderRoute: typeof TemplatesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/templates/dashboard': {
+      id: '/templates/dashboard'
+      path: '/templates/dashboard'
+      fullPath: '/templates/dashboard'
+      preLoaderRoute: typeof TemplatesDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/templates/saas': {
+      id: '/templates/saas'
+      path: '/templates/saas'
+      fullPath: '/templates/saas'
+      preLoaderRoute: typeof TemplatesSaasRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -273,8 +313,10 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StarsRoute: StarsRoute,
   StylingRoute: StylingRoute,
-  TemplatesRoute: TemplatesRoute,
   ComponentsSplatRoute: ComponentsSplatRoute,
+  TemplatesDashboardRoute: TemplatesDashboardRoute,
+  TemplatesSaasRoute: TemplatesSaasRoute,
+  TemplatesIndexRoute: TemplatesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

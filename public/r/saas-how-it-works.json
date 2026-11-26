@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-how-it-works",
+  "title": "SaaS - How it works",
+  "dependencies": [
+    "@octanejs/lucide"
+  ],
+  "registryDependencies": [
+    "https://neobrutalism-octane.vercel.app/r/s29.json",
+    "https://neobrutalism-octane.vercel.app/r/s4.json",
+    "https://neobrutalism-octane.vercel.app/r/saas-shared.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/templates/saas/how-it-works.tsrx",
+      "content": "import { FileInput, Rocket, Workflow } from \"@octanejs/lucide\"\n\nimport Star4 from \"@/components/stars/s4.tsrx\"\nimport Star29 from \"@/components/stars/s29.tsrx\"\nimport { cn } from \"@/lib/utils\"\n\nimport { SectionStars } from \"./decor-star.tsrx\"\nimport SectionHeading from \"./section-heading.tsrx\"\n\nconst STEPS = [\n  {\n    icon: FileInput,\n    title: \"Import in one click\",\n    description:\n      \"Bring issues, projects and people over from Jira, GitHub or a CSV. History and comments come along too.\",\n    color: \"bg-chart-1\",\n  },\n  {\n    icon: Workflow,\n    title: \"Automate the busywork\",\n    description:\n      \"Turn on agents and rules that triage, label and assign, so humans only touch what needs a human.\",\n    color: \"bg-chart-3\",\n  },\n  {\n    icon: Rocket,\n    title: \"Ship on schedule\",\n    description:\n      \"Plan cycles, spot blockers early and release on time, every time. Your stakeholders get live updates.\",\n    color: \"bg-chart-4\",\n  },\n]\n\nexport default function HowItWorks() @{\n  <section class=\"relative isolate overflow-hidden border-b-4 border-border bg-background px-5 py-24\">\n    <SectionStars\n      stars={[\n        {\n          star: Star29,\n          color: \"var(--chart-3)\",\n          class:\n            \"-left-16 lg:-left-10 top-[40%] size-24 rotate-[50deg] lg:size-40\",\n        },\n        {\n          star: Star4,\n          color: \"var(--chart-2)\",\n          class: \"-right-16 lg:-right-10 top-4 size-24 -rotate-12 lg:size-40\",\n        },\n      ]}\n    />\n\n    <div class=\"relative mx-auto w-full max-w-6xl\">\n      <SectionHeading\n        eyebrow=\"How it works\"\n        title=\"Up and running before your coffee cools\"\n        description=\"Most teams switch in an afternoon. No consultants, no migration project.\"\n      />\n\n      <ol class=\"relative grid gap-12 md:grid-cols-3 md:gap-8\">\n        <span\n          aria-hidden\n          class=\"absolute left-[16.67%] right-[16.67%] top-6 hidden -translate-y-1/2 border-t-2 border-border md:block\"\n        />\n        @for (\n          const { icon: Icon, title, description, color } of STEPS;\n          key title\n        ) {\n          <li class=\"relative flex flex-col items-center text-center\">\n            <span\n              class={cn(\n                \"flex size-12 items-center justify-center rounded-base border-2 border-border\",\n                color,\n              )}\n            >\n              <Icon class=\"size-6\" />\n            </span>\n            <h3 class=\"mt-6 font-heading text-xl\">{title as string}</h3>\n            <p class=\"mt-2 max-w-xs text-sm font-base\">\n              {description as string}\n            </p>\n          </li>\n        }\n      </ol>\n    </div>\n  </section>\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/how-it-works.tsrx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "saas-shared",
+  "title": "SaaS - Shared decor and section heading",
+  "registryDependencies": [
+    "https://neobrutalism-octane.vercel.app/r/s14.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/templates/saas/decor-star.tsrx",
+      "content": "import type { OctaneNode } from \"octane\"\nimport type { Octane } from \"octane/jsx-runtime\"\n\nimport Star14 from \"@/components/stars/s14.tsrx\"\n\nimport { cn, type ClassValue } from \"@/lib/utils\"\n\ntype StarComponent = (\n  props: Octane.SVGProps<SVGSVGElement> & {\n    color?: string\n    stroke?: string\n    strokeWidth?: number\n    pathClassName?: string\n  },\n) => OctaneNode\n\n// Faint 56px grid used as the background of every white section.\nexport const GRID_BACKGROUND =\n  \"bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-size-[56px_56px]\"\n\n// Non-scaling stroke keeps every star outline at 2px, matching card borders.\n// Avoid chart-1 for decoration: it reads as the interactive main colour.\nexport default function DecorStar({\n  star: Star,\n  color = \"var(--chart-3)\",\n  spin = false,\n  strokeWidth = 2,\n  class: klass,\n  style,\n}: {\n  star: StarComponent\n  color?: string\n  spin?: boolean\n  strokeWidth?: number\n  class?: ClassValue\n  style?: Octane.SVGProps<SVGSVGElement>[\"style\"]\n}) @{\n  <Star\n    aria-hidden\n    color={color}\n    stroke=\"var(--border)\"\n    strokeWidth={strokeWidth}\n    pathClassName=\"[vector-effect:non-scaling-stroke]\"\n    class={cn(\n      \"pointer-events-none shrink-0 overflow-visible\",\n      spin && \"animate-[spin_40s_linear_infinite] motion-reduce:animate-none\",\n      klass,\n    )}\n    style={style}\n  />\n}\n\n// A pair of big background stars for a section. The section needs\n// `relative isolate overflow-hidden`: isolate makes it a stacking context, so\n// the -z-10 stars paint above its background but below all of its content.\nexport function SectionStars({\n  stars,\n}: {\n  stars: { star: StarComponent; color: string; class: string }[]\n}) @{\n  <>\n    @for (const item of stars; index i; key i) {\n      <DecorStar\n        star={item.star}\n        color={item.color}\n        class={cn(\"absolute -z-10\", item.class)}\n      />\n    }\n  </>\n}\n\nexport function StarSticker({\n  star = Star14,\n  color = \"var(--chart-3)\",\n  children,\n  class: klass,\n}: {\n  star?: StarComponent\n  color?: string\n  children: OctaneNode\n  class?: ClassValue\n}) @{\n  <div\n    class={cn(\n      \"group absolute z-10 flex size-24 rotate-6 items-center justify-center text-center font-heading leading-tight text-foreground\",\n      klass,\n    )}\n  >\n    <DecorStar\n      star={star}\n      color={color}\n      class=\"absolute inset-0 size-full transition-transform duration-700 ease-out group-hover:rotate-45 motion-reduce:transition-none\"\n    />\n    <span class=\"relative\">{children}</span>\n  </div>\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/decor-star.tsrx"
+    },
+    {
+      "path": "src/components/templates/saas/section-heading.tsrx",
+      "content": "import type { OctaneNode } from \"octane\"\n\nimport { cn, type ClassValue } from \"@/lib/utils\"\n\n// Stroke is painted under the fill, so only half of it shows as an outline.\nexport function Eyebrow({\n  children,\n  class: klass,\n}: {\n  children: OctaneNode\n  class?: ClassValue\n}) @{\n  <p\n    class={cn(\n      \"text-lg font-heading uppercase tracking-[0.12em] text-chart-3 [paint-order:stroke_fill] [-webkit-text-stroke:2.5px_var(--border)]\",\n      klass,\n    )}\n  >\n    {children}\n  </p>\n}\n\nexport default function SectionHeading({\n  eyebrow,\n  title,\n  description,\n  align = \"center\",\n  class: klass,\n}: {\n  eyebrow: string\n  title: OctaneNode\n  description?: OctaneNode\n  align?: \"center\" | \"left\"\n  class?: ClassValue\n}) @{\n  <div\n    class={cn(\n      \"mb-14 flex max-w-2xl flex-col gap-4\",\n      align === \"center\" ? \"mx-auto items-center text-center\" : \"items-start\",\n      klass,\n    )}\n  >\n    <Eyebrow>{eyebrow as string}</Eyebrow>\n    <h2 class=\"text-balance font-heading text-4xl leading-tight sm:text-5xl\">\n      {title}\n    </h2>\n    @if (description) {\n      <p class=\"text-lg font-base\">{description}</p>\n    }\n  </div>\n}\n",
+      "type": "registry:component",
+      "target": "components/templates/saas/section-heading.tsrx"
+    }
+  ],
+  "type": "registry:component"
+}
