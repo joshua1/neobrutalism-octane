@@ -17,7 +17,7 @@ import {
   type ColumnVisibilityState,
   type RowSelectionState,
   type SortingState,
-} from "@octanejs/tanstack-table"
+} from "@tanstack/octane-table"
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "@octanejs/lucide"
 
 import { useState } from "octane"
