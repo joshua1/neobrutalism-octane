@@ -1,7 +1,7 @@
 # Octane authoring guide (neobrutalism-octane)
 
 `neobrutalism-octane/` is the neobrutalism components site built with Octane
-(0.26) and TanStack Start. Components, examples, templates and pages are
+(0.27) and TanStack Start. Components, examples, templates and pages are
 `.tsrx` files under `src`; plain `.ts` files that contain no JSX stay `.ts`.
 
 Octane source of truth: the installed `node_modules/octane` and
@@ -93,7 +93,7 @@ framework-neutral packages or `@octanejs/*` bindings.
 - Slot-like components that inspect `children` with `isValidElement`/clone them need their children as element descriptors: export them wrapped in `descriptorChildren(Impl)` from `octane` (see `src/components/ui/form.tsrx` `FormControl`).
 - `@octanejs/hook-form` `field` objects expose `onInput` (not `onChange`) for text inputs; `<Input {...field} />` just works.
 - **Render callbacks that a library calls as a plain function** (hook-form `FormField`/`Controller` `render`, recharts `formatter`/`content`/`label`) must return a JSX *value*: `render={({ field }) => <FormItem>…</FormItem>}`. Do **not** write `({ field }) => @{ … }` there: that compiles to a component body that needs the renderer's scope, compiles and typechecks fine, then crashes on hydration with `Cannot read properties of undefined (reading 'block')`. Use `=> @{ … }` only for functions octane renders as components.
-- **A bare `{expr}` cannot be the only content of a `@{ … }` body or directive arm** (octane 0.26): there it is a JavaScript block, not a hole, and the compiler rejects it. Wrap it: `@if (children != null) { <>{children}</> }`.
+- **A bare `{expr}` cannot be the only content of a `@{ … }` body or directive arm** (since octane 0.26): there it is a JavaScript block, not a hole, and the compiler rejects it. Wrap it: `@if (children != null) { <>{children}</> }`.
 - **Keep `@for`/`@if` out of JSX values returned from callbacks** (a `.map` callback, a hook-form `render`, recharts callbacks). The compiler accepts them, but the type checker's parser (`tsrx-tsc`) fails on the file. Use `.map()` and ternaries in JSX values and directives only inside `@{ … }` bodies.
 - The compiler needs its parser peer: `@tsrx/oxc` is a dev dependency pinned to the version `octane` names in its README.
 - **Compiler gap (octane 0.8.0):** JSX as a destructured-parameter default (`({ render = <Button/> }) => …`) is emitted untransformed and the module fails to parse. Default it in the body instead: `const render = renderProp ?? <Button/>`.
