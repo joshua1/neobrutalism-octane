@@ -1,0 +1,16 @@
+diff --git a/src/container/ClipPathProvider.tsrx b/src/container/ClipPathProvider.tsrx
+index 72bac4ad918704fd60dd937184aab179f1a1e911..d329d3d3482c5a28a9256a60bf6b746f605c7fb2 100644
+--- a/src/container/ClipPathProvider.tsrx
++++ b/src/container/ClipPathProvider.tsrx
+@@ -29,3 +29,11 @@ export function ClipPathProvider(props: { children: OctaneNode }) @{
+ export const useClipPathId = () => {
+ 	return useContext(ClipPathIdContext);
+ };
++
++// Exported so octane's production compiler keeps this a public context. As a
++// module-private context it becomes __createCompiledContext, whose provider
++// calls its children as a function; but the early `return null` above makes
++// this component render the provider through createScopedElement, which hands
++// it descriptor children, so every chart threw "e is not a function".
++// Still needed with octane 0.27.3 (rechecked 2026-11-27).
++export { ClipPathIdContext };
